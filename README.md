@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/simokitkat/Body-Mass-Index-calculator)
+- Live Site URL: [Frontend Mentor | Body Mass Index Calculator](https://bmi-calculator-frontendmentor.netlify.app)
 
 ## My process
 
