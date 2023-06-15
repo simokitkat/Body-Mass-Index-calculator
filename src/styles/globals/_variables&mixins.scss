@@ -1,0 +1,60 @@
+//colors
+$Blue: #345FF6;
+$Gunmetal: #253347;
+$Dark-Electric-Blue:#5E6E85;
+$Borders: #D8E2E7;
+$Pure-White:#FFFFFF;
+
+//Mixins:
+@mixin Heading-XL{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: -0.05em;
+}
+
+@mixin Heading-L{
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: 48px;
+line-height: 53px;
+letter-spacing: -0.05em;
+}
+
+@mixin Heading-M{
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+letter-spacing: -0.05em;
+}
+
+@mixin Heading-S{
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: -0.05em;
+}
+
+@mixin Body-M{
+font-family: 'Inter', sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+}
+
+@mixin Body-M-Bold{
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+}
+
+@mixin Body-S{
+font-family: 'Inter', sans-serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+}

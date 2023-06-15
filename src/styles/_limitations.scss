@@ -1,0 +1,192 @@
+@use './globals/index' as *;
+
+.limitations{
+    height: 944px;
+    max-width: 1440px;
+    margin: auto;
+    padding: 120px 140px;
+    
+    .container{
+        position: relative;
+        height: 100%;
+
+        .text{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 564px;
+            height: 184px;
+
+            h2{
+                @include Heading-L;
+                color: $Gunmetal;
+                margin-bottom: 35px
+            }
+
+            p{
+                @include Body-M;
+                color: $Dark-Electric-Blue;
+            }
+        }
+
+        .right-curve{
+            position: absolute;
+            left: 165px;
+            top: 250px;
+        }
+    }
+}
+
+.flex{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 961px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &>div{
+        padding: 32px;
+        width: 365px;
+        height: 232px;
+        background:$Pure-White;
+        box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+        border-radius: 16px;
+        .top{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+
+            span{
+                @include Heading-S;
+                color: $Gunmetal;
+            }
+        }
+
+        p{
+            @include Body-M;
+            color: $Dark-Electric-Blue;
+        }
+    }
+
+    .gender{
+        margin-right: 99px;
+        margin-left: 497px;
+        margin-bottom: 32px;
+    }
+
+    .age{
+        height: 184px;
+        margin-left: 199px;
+        margin-right: 32px;
+        margin-bottom: 24px;
+    }
+
+    .muscle{
+        height: 184px;
+    }
+
+    .pregnancy{
+        margin-right: 32px;
+    }
+}
+
+/***********************
+ ** Limitations Tablet **
+ ***********************/
+
+ @media (max-width:1350px) {
+    .limitations{
+        height: 1155px;
+        padding: 96px 43px 96px 39px;
+
+        .container{
+
+            .text{
+                width: 100%;
+                height: 139px;
+                text-align: center;
+
+                h2{
+                    font-size: 32px;
+                    line-height: 35px;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .right-curve{
+                display: none;
+            }
+        }
+
+        .flex{
+            width: 100%;
+            height: 768px;
+            top: 195px;
+            justify-content: center;
+            row-gap: 24px;
+            column-gap: 15px;
+
+            &>div{
+                margin: 0;
+                width: 335.5px;
+                height: 241.6px;
+            }
+        }
+    }
+ }
+
+/***********************
+** Limitations Mobile **
+***********************/
+
+@media (max-width:767px){
+    .limitations{
+        height: 1531px;
+        padding: 72px 24px 96px 24px;
+
+        .container{
+            
+            .text{
+                height: 211px;
+            }
+        }
+
+        .flex{
+            height: 1096px;
+            top: 200px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 16px;
+
+            &>div{
+                padding: 24px;
+                width: 327px;
+            }
+            .gender,
+            .race{
+                height: 216px;
+            }
+            .age{
+                height: 168px;
+            }
+            .muscle{
+                height: 192px;
+            }
+            .pregnancy{
+                height: 240px;
+            }
+        }
+    }
+}
+
+@media (max-width:500px){
+    .limitations{
+        .flex{
+            top: 267px;
+        }
+    }
+}

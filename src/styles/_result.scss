@@ -1,0 +1,111 @@
+@use './globals/index' as *;
+
+//result
+
+.result{
+    height: 130px;
+    background: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
+    border-radius: 16px 999px 999px 16px;
+    padding: 32px;
+    color: $Pure-White;
+
+    h3{
+        @include Heading-M;
+        margin-bottom: 16px;
+    }
+
+    p{
+        @include Body-S;
+    }
+}
+
+//Metric result
+
+.metric-result,
+.imperial-result{
+    height: 166px;
+    background: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
+    border-radius: 16px 999px 999px 16px;
+    padding: 32px;
+    color: $Pure-White;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    .left{
+        width: 206px;
+
+        span{
+            display: block;
+            @include Body-M-Bold;
+            margin-bottom: 8px;
+        }
+
+        h2{
+            @include Heading-XL;
+        }
+    }
+
+    .right{
+        width: 206px;
+        @include Body-S;
+        
+        .ideal{
+            font-weight: 700;
+        }
+    }
+}
+
+/******************
+** Result Tablet **
+******************/
+
+@media(max-width:1350px){
+   
+    .metric-result,
+    .imperial-result{
+        height: 149px;
+
+        .left,
+        .right{
+            width: 50%;
+        }
+
+        .left{
+            h2{
+                @include Heading-L
+            }
+        }
+    }
+}
+
+/******************
+** Result Mobile **
+******************/
+@media (max-width:767px){
+    .result,
+    .metric-result,
+    .imperial-result{
+        height: 257px;
+        border-radius: 16px;
+    }
+
+    .result{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .metric-result,
+    .imperial-result{
+        flex-direction: column;
+        align-items: flex-start;
+
+        .left,
+        .right{
+            width: 100%;
+        }
+    }
+}

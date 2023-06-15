@@ -1,0 +1,108 @@
+@use './globals/index' as *;
+
+.meaning{
+    max-width: 1440px;
+    margin: auto;
+    height: 694px;
+    padding: 65px 140px 96px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        height: 100%;
+
+        .curved-left{
+            position: absolute;
+            right: 25px;
+            top: -54px;
+            z-index: 1;
+        }
+
+        .flex-img{
+            width: 564px;
+        }
+
+        .text{
+            width: 465px;
+            padding-top: 184px;
+
+            h2{
+                @include Heading-L;
+                color: $Gunmetal;
+                margin-bottom: 35px;
+            }
+
+            p{
+                @include Body-M;
+                color: $Dark-Electric-Blue;
+            }
+        }
+    }
+}
+
+/*******************
+** Meaning Tablet **
+*******************/
+
+@media (max-width:1350px){
+    .meaning{
+        height: 572px;
+        padding: 65px 43px 96px 0;
+        overflow: hidden;
+
+        .container{
+            gap: 75px;
+            justify-content: center;
+            
+            .curved-left{
+                display: none;
+            }
+
+            .flex-img{
+                width: 319px;
+                object-fit: cover;
+            }
+
+            .text{
+                width: 331px;
+                padding-top: 35px;
+    
+                h2{
+                    font-size: 32px;
+                    line-height: 35px;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
+}
+
+/*******************
+** Meaning Mobile **
+*******************/
+@media (max-width:767px){
+    .meaning{
+        height: 888px;
+        padding: 71.6px 0;
+
+        .container{
+            flex-direction: column;
+            gap: 48px;
+            align-items: center;
+
+            .flex-img{
+                width: 100%;
+                max-width: 564px;
+                height: 354.39px;
+                object-position: top;
+            }
+
+            .text{
+                width: 87.47%;
+                max-width: 564px;
+                padding: 0;
+            }
+        }
+    }
+}

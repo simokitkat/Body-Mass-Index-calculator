@@ -1,0 +1,424 @@
+@use './globals/index' as *;
+
+.hero{
+    max-width: 1440px;
+    margin: auto;
+    height: 860px;
+    padding: 0 140px 0 24px;
+
+    .container{
+        width: 978px;
+        height: 100%;
+        padding: 75px 0 0 116px;
+        border-radius: 0px 0px 35px 35px;
+        background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+        position: relative;
+
+        .logo{
+            display: block;
+        }
+
+        h1{
+            margin: 131px 0 35px;
+            color: $Gunmetal;
+            @include Heading-XL;
+        }
+
+        &>p{
+            color: $Dark-Electric-Blue;
+            @include Body-M;
+            width: 465px;
+        }
+    }
+}
+
+
+/***********
+*** Form ***
+***********/
+form{
+    position: absolute;
+    left: 712px;
+    top: 181px;
+    width: 564px;
+    height: 448px;
+    padding: 32px;
+    background-color: $Pure-White;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    z-index: 2;
+
+    &.long{
+        height: 606px
+    }
+
+    &.short-result{
+        height: 484px;
+    }
+
+    &>h3{
+        @include Heading-M;
+        color: $Gunmetal;
+        margin-bottom: 32px;
+    }
+
+}
+
+// measure system
+.measure-system{
+    display: flex;
+    height: 31px;
+    gap: 24px;
+    margin-bottom: 32px;
+
+    >div{
+        display: flex;
+        height: 100%;
+        width: 238px;
+        align-items: center;
+        gap: 18px;
+
+        input{
+            appearance: none;
+            height: 100%;
+            width: 31px;
+            border-radius: 50%;
+            border: 1px solid $Borders;
+            background-color: $Pure-White;
+            cursor: pointer;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $Blue;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                display: none;
+            }
+
+            &:checked{
+                background-color: rgba(52, 95, 246, 0.15);
+
+                &::before{
+                    display: block;
+                }
+            }
+
+            &:hover{
+                border-color: $Blue
+            }
+        }
+
+        label{
+            @include Body-M-Bold;
+            color: $Gunmetal;
+        }
+    }
+}
+
+// HW-metric & HW-imperial
+.HW-metric{
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 98px;
+    gap: 24px;
+    
+    .height,
+    .weight{
+        position: relative;
+        height: 100%;
+
+        &::before{
+            display: block;
+            position: absolute;
+            width: 35px;
+            height: 29px;
+            color: $Blue;
+            @include Heading-M;
+            right: 20px;
+            top: 48px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        span{
+            display: block;
+            color: $Dark-Electric-Blue;
+            @include Body-S;
+            margin-bottom: 8px;
+        }
+
+        input{
+            width: 100%;
+            height: 69px;
+            padding: 20px 24px;
+            background: $Pure-White;
+            border: 1px solid $Borders;
+            border-radius: 12px;
+            color: $Gunmetal;
+            cursor: pointer;
+            @include Heading-M;
+
+            &::placeholder{
+                @include Heading-M;
+                color: $Gunmetal;
+                opacity: 0.25;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button{
+                appearance: none;
+            }
+
+            &:hover{
+                border-color: $Blue;
+            }
+        }
+    }
+
+    .height::before{
+        content: 'cm';
+    }
+    .weight::before{
+        content: 'kg';
+    }
+}
+
+.HW-imperial{
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 98px);
+    height: 220px;
+    gap: 24px;
+
+    .height,
+    .weight{
+
+        span{
+            display: block;
+            color: $Dark-Electric-Blue;
+            @include Body-S;
+            margin-bottom: 8px;
+        }
+        
+        &>div{
+            height: 69px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+
+            div{
+                position: relative;
+                width: 238px;
+    
+                &::before{
+                        display: block;
+                        position: absolute;
+                        width: 35px;
+                        height: 29px;
+                        color: $Blue;
+                        @include Heading-M;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 3;
+                        pointer-events: none;
+                }
+
+                input{
+                    width: 100%;
+                    height: 100%;
+                    padding: 20px 24px;
+                    background: $Pure-White;
+                    border: 1px solid $Borders;
+                    border-radius: 12px;
+                    color: $Gunmetal;
+                    cursor: pointer;
+                    @include Heading-M;
+        
+                    &::placeholder{
+                        @include Heading-M;
+                        color: $Gunmetal;
+                        opacity: 0.25;
+                    }
+        
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button{
+                        appearance: none;
+                    }
+
+                    &:hover{
+                        border-color: $Blue;
+                    }
+                }
+            }
+        }
+    }
+
+.height .in::before{
+    content: 'in';
+}
+.height .ft::before{
+    content: 'ft';
+}
+.weight .st::before{
+    content: 'st';
+}
+.weight .lbs::before{
+    content: 'lbs';
+}
+
+}
+
+
+/****************
+** Hero Tablet **
+****************/
+
+@media(max-width:1350px){
+    .hero{
+        height: 943px;
+        padding: 0;
+
+        .container{
+            width: 100%;
+            height: 640px;
+            padding: 32px 43px 0 39px;
+            text-align: center;
+
+            .logo{
+                margin: auto;
+                width: 40px;
+            }
+
+            h1{
+                margin: 40px 0 24px;
+                @include Heading-L;
+            }
+
+            &>p{
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    form{
+        width: 100%;
+        max-width: 686px;
+        height: 467px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 355px;
+        text-align: left;
+
+        &.long{
+            margin-bottom: 100px;
+        }
+    }
+
+    .measure-system{
+        &>div{
+            width: 50%;
+        }
+    }
+
+    .HW-imperial{
+
+        .height,
+        .weight{
+
+            &>div{
+                div{
+                    width: calc(50% - 12px);
+                }
+            }
+            
+        }
+    }
+}
+
+/****************
+** Hero Mobile **
+****************/
+
+@media (max-width:767px) {
+    .hero{
+        height: 1120px;
+
+        .container{
+            padding: 32px 24px 0 24px;
+
+            h1{
+                margin: 24px 0;
+            }
+        }
+    }
+
+    form{
+        width: 87.47%;
+        height: 649px;
+        top: 471px;
+        padding: 24px;
+
+        &.short-result,
+        &.long{
+            height: 649px;
+            margin-bottom: 0;
+        }
+
+        &>h3{
+            margin-bottom: 24px;
+        }
+    }
+
+    .measure-system{
+        margin-bottom: 24px;
+    }
+
+    .HW-metric,
+    .HW-imperial{
+        height: 212px;
+        margin-bottom: 24px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,98px);
+        gap: 16px;
+
+        .height,
+        .weight{
+            height: 98px;
+        }
+    }
+
+    .HW-metric{
+        .height{
+            &::before{
+                right: 25px;
+            }
+        }
+
+        .weight{
+           &::before{
+            right: 16px;
+           }
+        }
+    }
+
+    .HW-imperial{
+
+        .height,
+        .weight{
+
+            &>div{
+                gap: 16px;
+            }
+        }
+    }
+}
+
